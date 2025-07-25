@@ -5,7 +5,7 @@ import re
 app = Flask(__name__)
 HF_SPACE_ID = "asmaaabd0/find-me"
 
-@app.route('/chat', methods=['POST'])
+@app.route('/chat',  methods=['GET', 'POST'])
 def chat():
     data = request.get_json()
     message = data.get('message')
