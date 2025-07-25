@@ -36,8 +36,10 @@ def chat():
         return jsonify({"error": str(e)}), 500
 
 
-@app.route('/', methods=['GET'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
+    if request.method == 'POST':
+        return jsonify({"message": "This endpoint is only for testing availability. Please use /chat for chat requests."}), 405
     return "Chatbot API is running!"
 
 if __name__ == '__main__':
