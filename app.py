@@ -26,7 +26,7 @@ def chat():
 
     try:
         # 2. تمرير الـ HF_TOKEN للـ Client لضمان عدم حدوث Timeout أو طلب تسجيل دخول
-        token = os.environ.get("HF_TOKEN")
+        token = os.environ.get("TOKEN")
         client = Client(HF_SPACE_ID, hf_token=token)
         
         # 3. تعديل طريقة الـ Predict
