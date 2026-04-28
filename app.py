@@ -3,7 +3,8 @@ from gradio_client import Client
 import re
 
 app = Flask(__name__)
-HF_SPACE_ID = "asmaaabd0/find-me"
+
+HF_SPACE_ID = "SaraSalem/me-app"
 
 @app.route('/chat',  methods=['GET', 'POST'])
 def chat():
@@ -42,6 +43,5 @@ def index():
         return jsonify({"message": "This endpoint is only for testing availability. Please use /chat for chat requests."}), 405
     return "Chatbot API is running!"
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+if __name__ == '__main__':
+    app.run(debug=True)
